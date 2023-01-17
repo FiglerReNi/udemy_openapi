@@ -1,0 +1,8 @@
+Swagger Példa:
+https://github.com/OAI/OpenAPI-Specification/blob/main/examples/v3.0/petstore.yaml
+
+YAML szerkezet:
+https://learnxinyminutes.com/docs/yaml/
+
+SwaggerHub editor:
+ctrl+space: előhozza egy property választható opcióit
