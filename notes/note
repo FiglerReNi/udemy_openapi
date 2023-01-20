@@ -6,3 +6,6 @@ https://learnxinyminutes.com/docs/yaml/
 
 SwaggerHub editor:
 ctrl+space: előhozza egy property választható opcióit
+
+Részletes séma leírás adott verzióhz:
+https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md
