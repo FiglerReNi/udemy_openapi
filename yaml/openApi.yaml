@@ -18,4 +18,20 @@ servers:
     description: QA Server
   - url: https://prod.example.com
     description: Production Server
-paths: {}
+paths:
+  /app/customers:
+    get:
+      responses:
+        '202':
+          description: List of Customers
+    put:
+      responses:
+        '202':
+          description: Modify of Customers
+  /app/beers:
+    get:
+      responses:
+        '202':
+          description: List of Beers
+        '404':
+          description: No Beers Found

@@ -9,3 +9,6 @@ ctrl+space: előhozza egy property választható opcióit
 
 Részletes séma leírás adott verzióhz:
 https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md
+
+Json Schema (az OpenApi schema ennek a kiterjesztése, ez az alapja):
+https://json-schema.org/understanding-json-schema/index.html
