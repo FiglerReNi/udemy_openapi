@@ -13,4 +13,5 @@ https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md
 Json Schema (az OpenApi schema ennek a kiterjesztése, ez az alapja):
 https://json-schema.org/understanding-json-schema/index.html
 
-Property enum csak azonos adattípusba tartozó elemeket tartalmazhat.
+Jegyzetek:
+Enum csak azonos adattípusba tartozó elemeket tartalmazhat.
