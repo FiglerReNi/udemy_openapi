@@ -14,4 +14,9 @@ Json Schema (az OpenApi schema ennek a kiterjesztése, ez az alapja):
 https://json-schema.org/understanding-json-schema/index.html
 
 Jegyzetek:
-Enum csak azonos adattípusba tartozó elemeket tartalmazhat.
+ - Enum csak azonos adattípusba tartozó elemeket tartalmazhat.
+ - Components-re mutató referenica lehet:
+    -> az adott .yaml-ben lévő componentsre mutató
+    -> lehet külső file a tendszerben, ilyenkor a .yaml útvonalából indulunk ki, ha azzal egy szinten van akkor elég a file nevét megadni
+    -> teljes url is megadható, ha pélfául egy github projektben lévő másik componentset akarunk használni
+
