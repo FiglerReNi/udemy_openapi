@@ -19,4 +19,9 @@ Jegyzetek:
     -> az adott .yaml-ben lévő componentsre mutató
     -> lehet külső file a tendszerben, ilyenkor a .yaml útvonalából indulunk ki, ha azzal egy szinten van akkor elég a file nevét megadni
     -> teljes url is megadható, ha pélfául egy github projektben lévő másik componentset akarunk használni
+ - Parameters:
+    -> path: /item/{itemId}
+    -> query: /item?id=###
 
+Gyors billentyű:
+  shift + tab --> visszafelé tab
