@@ -20,8 +20,12 @@ Jegyzetek:
     -> lehet külső file a tendszerben, ilyenkor a .yaml útvonalából indulunk ki, ha azzal egy szinten van akkor elég a file nevét megadni
     -> teljes url is megadható, ha pélfául egy github projektben lévő másik componentset akarunk használni
  - Parameters:
-    -> path: /item/{itemId}
+    -> path: /item/{itemId}; mindig kötelező és a swagger neve azonos kell legyen a path-ban lévő névvel
     -> query: /item?id=###
+    -> a parameters listát vár ezért '-' jelekkel kezdjük a blokkokat
+ - Description formázás:
+    -> *text* - italic/dőlt
+    -> **text** - bold/félkövér
 
 Gyors billentyű:
   shift + tab --> visszafelé tab

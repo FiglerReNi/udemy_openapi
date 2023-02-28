@@ -21,6 +21,8 @@ servers:
 paths:
   /app/customers:
     get:
+      summary: List of Customers
+      description: Get a list of **Customers** in the system
       parameters:
         - $ref: "#/components/parameters/PageNumberParameter"
         - $ref: "#/components/parameters/PageSizeParameter"
@@ -32,11 +34,34 @@ paths:
               schema:
                 $ref: "#/components/schemas/CustomerPagedList"
     put:
+      summary: Modify of Customers
+      description: Modify *all* **Customers** at the same time
       responses:
         '200':
           description: Modify of Customers
+  /app/customers/{customerId}:
+    get:
+      summary: Customer by Id
+      description: Get details of **Customer** by id
+      parameters:
+        - name: customerId
+          in: path
+          description: Customer Id
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Customer
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Customer"
   /app/beers:
     get:
+      summary: List of Beers
+      description: Get a list of **Beers** in the system.
       parameters:
         - $ref: "#/components/parameters/PageNumberParameter"
         - $ref: "#/components/parameters/PageSizeParameter"
@@ -49,6 +74,25 @@ paths:
                 $ref: "#/components/schemas/BeerPagedList"
         '404':
           description: No Beers Found
+  /app/beers/{beerId}:
+    get:
+      summary: Beer by Id
+      description: Get details of **Beer** by id
+      parameters:
+        - name: beerId
+          in: path
+          description: Beer Id
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Beer
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Beer"
 components:
   parameters:
     PageNumberParameter:
