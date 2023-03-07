@@ -21,6 +21,8 @@ servers:
 paths:
   /app/customers:
     get:
+      tags:
+        - Customers
       summary: List of Customers
       description: Get a list of **Customers** in the system
       parameters:
@@ -34,6 +36,8 @@ paths:
               schema:
                 $ref: "#/components/schemas/CustomerPagedList"
     put:
+      tags:
+        - Customers
       summary: Modify of Customers
       description: Modify *all* **Customers** at the same time
       responses:
@@ -41,6 +45,8 @@ paths:
           description: Modify of Customers
   /app/customers/{customerId}:
     get:
+      tags:
+        - Customers
       summary: Customer by Id
       description: Get details of **Customer** by id
       parameters:
@@ -60,6 +66,8 @@ paths:
                 $ref: "#/components/schemas/Customer"
   /app/beers:
     get:
+      tags:
+        - Beers
       summary: List of Beers
       description: Get a list of **Beers** in the system.
       parameters:
@@ -76,6 +84,8 @@ paths:
           description: No Beers Found
   /app/beers/{beerId}:
     get:
+      tags:
+        - Beers
       summary: Beer by Id
       description: Get details of **Beer** by id
       parameters:

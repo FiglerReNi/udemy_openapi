@@ -26,6 +26,8 @@ Jegyzetek:
  - Description formázás:
     -> *text* - italic/dőlt
     -> **text** - bold/félkövér
+ - Tags:
+    -> ez egy string lista, egy endpoint több tag alá is tartozhat
 
 Gyors billentyű:
   shift + tab --> visszafelé tab
