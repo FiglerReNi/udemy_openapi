@@ -23,6 +23,7 @@ paths:
     get:
       tags:
         - Customers
+      operationId: getListOfCustomers
       summary: List of Customers
       description: Get a list of **Customers** in the system
       parameters:
@@ -38,15 +39,39 @@ paths:
     put:
       tags:
         - Customers
+      operationId: modifyListOfCustomers
       summary: Modify of Customers
       description: Modify *all* **Customers** at the same time
       responses:
-        '200':
+        '201':
           description: Modify of Customers
+    post:
+      tags:
+        - Customers
+      operationId: createCustomer
+      summary: New Customer
+      description: Create a new **Customer**
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Customer"
+      responses:
+        '201':
+          description: Customer Created
+          headers:
+            Location:
+              description: Location of the Created Customer
+              schema:
+                type: string
+                format: url
+                example: https://example.com/app/customers/{assignedId}
   /app/customers/{customerId}:
     get:
       tags:
         - Customers
+      operationId: getCustomerById
       summary: Customer by Id
       description: Get details of **Customer** by id
       parameters:
@@ -68,6 +93,7 @@ paths:
     get:
       tags:
         - Beers
+      operationId: getListOfBeers
       summary: List of Beers
       description: Get a list of **Beers** in the system.
       parameters:
@@ -86,6 +112,7 @@ paths:
     get:
       tags:
         - Beers
+      operationId: getBeerById
       summary: Beer by Id
       description: Get details of **Beer** by id
       parameters:
@@ -155,6 +182,7 @@ components:
         id:
           type: string
           format: uuid
+          readOnly: true
         firstName:
           type: string
           minLength: 2

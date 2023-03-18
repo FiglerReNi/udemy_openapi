@@ -28,6 +28,16 @@ Jegyzetek:
     -> **text** - bold/félkövér
  - Tags:
     -> ez egy string lista, egy endpoint több tag alá is tartozhat
+ - OperationId:
+    -> unique kell legyen az egész dokumentumban
+    -> case sensitive
+ - POST operation esetén a létrejövő objektum útvonalát bele szokás tenni a response headerjébe, hogy egyből elérhető legyen
+ - readOnly: paraméter tulajdonság, ha request-ben hasznájuk az objectet aminek a paramétere readOnly=true az nem fog megjelenni,
+   vagyis nem kérjük a request body-ban, de a response-ban megjelenik. Ez akkor is igaz, ha a required=true, ilyenkor csak a response-ra
+   vonatkozik.
+ - writeOnly: az előző fordítottja, a response-ban nem lesz benne, de a request kérni fogja (például jelszavaknál használják)
+
+
 
 Gyors billentyű:
   shift + tab --> visszafelé tab
