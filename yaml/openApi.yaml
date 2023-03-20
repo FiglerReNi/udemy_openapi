@@ -43,14 +43,14 @@ paths:
       summary: Modify of Customers
       description: Modify *all* **Customers** at the same time
       responses:
-        '201':
-          description: Modify of Customers
+        '204':
+          description: Customers Modified
     post:
       tags:
         - Customers
       operationId: createCustomer
       summary: New Customer
-      description: Create a new **Customer**
+      description: Create a new **Customer** Object
       requestBody:
         required: true
         content:
@@ -73,15 +73,9 @@ paths:
         - Customers
       operationId: getCustomerById
       summary: Customer by Id
-      description: Get details of **Customer** by id
+      description: Get details of **Customer** by Id
       parameters:
-        - name: customerId
-          in: path
-          description: Customer Id
-          required: true
-          schema:
-            type: string
-            format: uuid
+        - $ref: "#/components/parameters/CustomerIdParameter"
       responses:
         '200':
           description: Customer
@@ -89,6 +83,34 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Customer"
+    put:
+      tags:
+        - Customers
+      operationId: modifyCustomerById
+      summary: Modify of Customer
+      description: Modify **Customer** by Id
+      parameters:
+        - $ref: "#/components/parameters/CustomerIdParameter"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Customer"
+      responses:
+        '204':
+          description: Customer Modified By Id
+    delete:
+      tags:
+        - Customers
+      operationId: deleteCustomerById
+      summary: Delete Customer by Id
+      description: Delete **Customer** by Id
+      parameters:
+        - $ref: "#/components/parameters/CustomerIdParameter"
+      responses:
+        '200':
+          description: Customer Deleted
   /app/beers:
     get:
       tags:
@@ -108,6 +130,28 @@ paths:
                 $ref: "#/components/schemas/BeerPagedList"
         '404':
           description: No Beers Found
+    post:
+      tags:
+        - Beers
+      operationId: createBeer
+      summary: New Beer
+      description: Create a new **Beer** Object
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Beer"
+      responses:
+        '201':
+          description: Beer Created
+          headers:
+            Location:
+              description: Location of the Created Beer
+              schema:
+                type: string
+                format: url
+                example: https://example.com/app/beers/{assignedId}
   /app/beers/{beerId}:
     get:
       tags:
@@ -130,6 +174,23 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Beer"
+    put:
+      tags:
+        - Beers
+      operationId: modifyBeerById
+      summary: Modify of Beer
+      description: Modify **Beer** by Id
+      parameters:
+        - $ref: "#/components/parameters/BeerIdParameter"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Beer"
+      responses:
+        '204':
+          description: Modified Beer By Id
 components:
   parameters:
     PageNumberParameter:
@@ -150,6 +211,22 @@ components:
         type: integer
         format: int32
         default: 25
+    CustomerIdParameter:
+      name: customerId
+      in: path
+      description: Customer Id
+      required: true
+      schema:
+        type: string
+        format: uuid
+    BeerIdParameter:
+      name: beerId
+      in: path
+      description: Beer Id
+      required: true
+      schema:
+        type: string
+        format: uuid
   schemas:
     Address:
       type: object
@@ -223,6 +300,7 @@ components:
         id:
           type: string
           format: uuid
+          readOnly: true
         name:
           type: string
         style:

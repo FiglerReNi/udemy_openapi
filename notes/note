@@ -1,3 +1,6 @@
+Saját gyakorló elérése:
+https://app.swaggerhub.com/apis/FiglerReNi/OpenApiCourse/1.0#/ (Github felhasználóhoz tartozó swagger)
+
 Swagger Példa:
 https://github.com/OAI/OpenAPI-Specification/blob/main/examples/v3.0/petstore.yaml
 
@@ -36,6 +39,10 @@ Jegyzetek:
    vagyis nem kérjük a request body-ban, de a response-ban megjelenik. Ez akkor is igaz, ha a required=true, ilyenkor csak a response-ra
    vonatkozik.
  - writeOnly: az előző fordítottja, a response-ban nem lesz benne, de a request kérni fogja (például jelszavaknál használják)
+ - válaszok általában:
+     -> GET esetén 200 és van body
+     -> POST esetén 201 és headers Location-ba az útvonal
+     -> PUT esetén 204
 
 
 
