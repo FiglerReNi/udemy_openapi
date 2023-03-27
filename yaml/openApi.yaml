@@ -36,6 +36,8 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/CustomerPagedList"
+        '404':
+          description: No Customers Found
     put:
       tags:
         - Customers
@@ -170,6 +172,10 @@ paths:
                 type: string
                 format: url
                 example: https://example.com/app/beers/{assignedId}
+        '400':
+          description: Bad Request
+        '409':
+          description: Conflict
   /app/beers/{beerId}:
     get:
       tags:
@@ -186,6 +192,8 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Beer"
+        '404':
+          description: Not Found
     put:
       tags:
         - Beers
@@ -203,6 +211,12 @@ paths:
       responses:
         '204':
           description: Modified Beer By Id
+        '400':
+          description: Bad Request
+        '404':
+          description: Not Found
+        '409':
+          description: Conflict
     delete:
       tags:
         - Beers
@@ -214,6 +228,8 @@ paths:
       responses:
         '200':
           description: Beer Deleted
+        '404':
+          description: Not Found
 components:
   parameters:
     PageNumberParameter:
