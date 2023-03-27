@@ -160,13 +160,7 @@ paths:
       summary: Beer by Id
       description: Get details of **Beer** by id
       parameters:
-        - name: beerId
-          in: path
-          description: Beer Id
-          required: true
-          schema:
-            type: string
-            format: uuid
+        - $ref: "#/components/parameters/BeerIdParameter"
       responses:
         '200':
           description: Beer
@@ -191,6 +185,17 @@ paths:
       responses:
         '204':
           description: Modified Beer By Id
+    delete:
+      tags:
+        - Beers
+      operationId: deleteBeerById
+      summary: Delete Beer by Id
+      description: Delete **Beer** by Id
+      parameters:
+        - $ref: "#/components/parameters/BeerIdParameter"
+      responses:
+        '200':
+          description: Beer Deleted
 components:
   parameters:
     PageNumberParameter:
