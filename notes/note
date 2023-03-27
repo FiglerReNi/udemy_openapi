@@ -43,6 +43,13 @@ Jegyzetek:
      -> GET esetén 200 és van body
      -> POST esetén 201 és headers Location-ba az útvonal
      -> PUT esetén 204
+ - válaszok hiba esetén:
+     -> 404 Not Found
+        - path param id miatt szoktuk: GET, PUT, DELETE
+     -> 409 Conflict
+        - PUT, POST
+     -> 400 Bad Request
+        - request body miatt szoktuk: PUT, POST
 
 
 

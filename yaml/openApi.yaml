@@ -45,6 +45,10 @@ paths:
       responses:
         '204':
           description: Customers Modified
+        '400':
+          description: Bad Request
+        '409':
+          description: Conflict
     post:
       tags:
         - Customers
@@ -67,6 +71,10 @@ paths:
                 type: string
                 format: url
                 example: https://example.com/app/customers/{assignedId}
+        '400':
+          description: Bad Request
+        '409':
+          description: Conflict
   /app/customers/{customerId}:
     get:
       tags:
@@ -83,6 +91,8 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Customer"
+        '404':
+          description: Not Found
     put:
       tags:
         - Customers
@@ -100,6 +110,12 @@ paths:
       responses:
         '204':
           description: Customer Modified By Id
+        '400':
+          description: Bad Request
+        '404':
+          description: Not Found
+        '409':
+          description: Conflict
     delete:
       tags:
         - Customers
@@ -111,6 +127,8 @@ paths:
       responses:
         '200':
           description: Customer Deleted
+        '404':
+          description: Not Found
   /app/beers:
     get:
       tags:
