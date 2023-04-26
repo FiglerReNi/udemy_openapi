@@ -16,6 +16,9 @@ https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md
 Json Schema (az OpenApi schema ennek a kiterjesztése, ez az alapja):
 https://json-schema.org/understanding-json-schema/index.html
 
+Callbacks leírás
+https://swagger.io/docs/specification/callbacks/
+
 Jegyzetek:
  - Enum csak azonos adattípusba tartozó elemeket tartalmazhat.
  - Components-re mutató referenica lehet:
@@ -50,8 +53,10 @@ Jegyzetek:
         - PUT, POST
      -> 400 Bad Request
         - request body miatt szoktuk: PUT, POST
-
-
+ -webhooks/calbacks:
+     Amikor csinálunk egy post-ot, például egy rendelést, akkor a request body-ban kérünk egy url útvonalat ahhoz a rendszerhez ahová majd a sikeres post után szeretnénk üzenetet küldeni.
+     Jelen esetben például egy státusz váltásról szólót egy másik rendszerbe.
+     A kapott linket használjuk a callback során, lehet ez is egy post például egy request body-val, mondjuk átküldjük a rendelés során létrejött id-t és hogy milyen státusz változás történt.
 
 Gyors billentyű:
   shift + tab --> visszafelé tab
