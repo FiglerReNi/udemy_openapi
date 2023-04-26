@@ -169,13 +169,7 @@ paths:
                 content:
                   application/json:
                     schema:
-                      type: object
-                      properties:
-                        orderId:
-                          type: string
-                          format: uuid
-                        orderStatus:
-                            type: string
+                      $ref: '#/components/schemas/BeerOrderStatus'
               responses:
                 '201':
                   description: Status Created
@@ -469,6 +463,14 @@ components:
           type: integer
           nullable: true
           readOnly: true
+    BeerOrderStatus:
+      type: object
+      properties:
+        orderId:
+          type: string
+          format: uuid
+        orderStatus:
+          type: string
     PagedResponse:
       type: object
       properties:

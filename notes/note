@@ -57,6 +57,7 @@ Jegyzetek:
      Amikor csinálunk egy post-ot, például egy rendelést, akkor a request body-ban kérünk egy url útvonalat ahhoz a rendszerhez ahová majd a sikeres post után szeretnénk üzenetet küldeni.
      Jelen esetben például egy státusz váltásról szólót egy másik rendszerbe.
      A kapott linket használjuk a callback során, lehet ez is egy post például egy request body-val, mondjuk átküldjük a rendelés során létrejött id-t és hogy milyen státusz változás történt.
-
+     A WebHook egy olyan automatikus üzenet a webáruháztól például, egy külső rendszer felé, amely olyan események hatására váltódhat ki, mint például egy rendelés feladása,
+     egy rendelés állapotának megváltozása, hírlevél feliratkozás, hírlevél leiratkozás vagy hírlevél feliratkozó adatmódosítás.
 Gyors billentyű:
   shift + tab --> visszafelé tab
