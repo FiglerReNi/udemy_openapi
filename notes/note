@@ -19,6 +19,9 @@ https://json-schema.org/understanding-json-schema/index.html
 Callbacks leírás
 https://swagger.io/docs/specification/callbacks/
 
+Authentication:
+https://swagger.io/docs/specification/authentication/
+
 Jegyzetek:
  - Enum csak azonos adattípusba tartozó elemeket tartalmazhat.
  - Components-re mutató referenica lehet:

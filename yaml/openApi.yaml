@@ -18,6 +18,9 @@ servers:
     description: QA Server
   - url: https://prod.example.com
     description: Production Server
+security:
+  - BasicAuth: []
+  - JwtAuthToken: []
 paths:
   /app/customers:
     get:
@@ -38,6 +41,7 @@ paths:
                 $ref: "#/components/schemas/CustomerPagedList"
         '404':
           description: No Customers Found
+      security: []
     put:
       tags:
         - Customers
@@ -95,6 +99,7 @@ paths:
                 $ref: "#/components/schemas/Customer"
         '404':
           description: Not Found
+      security: []
     put:
       tags:
         - Customers
@@ -192,6 +197,7 @@ paths:
                 $ref: "#/components/schemas/BeerPagedList"
         '404':
           description: No Beers Found
+      security: []
     post:
       tags:
         - Beers
@@ -236,6 +242,7 @@ paths:
                 $ref: "#/components/schemas/Beer"
         '404':
           description: Not Found
+      security: []
     put:
       tags:
         - Beers
@@ -273,6 +280,14 @@ paths:
         '404':
           description: Not Found
 components:
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+    JwtAuthToken:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
   parameters:
     PageNumberParameter:
       name: pageNumber
